@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask import request
 from werkzeug import secure_filename
@@ -14,9 +13,8 @@ def index():
 
 @app.route('/karera')
 def karera():
-    webbrowser.open_new(
-    '1.html'
-)
+    webbrowser.open('1.html')
+    return htmltext
 
 @app.route('/obrazovanie')
 def obrazovanie():
