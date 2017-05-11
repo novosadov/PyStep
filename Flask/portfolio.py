@@ -11,6 +11,7 @@ app = Flask(__name__)
 def index():
     return htmltext
 
+
 @app.route('/karera')
 def karera():
     webbrowser.open('1.html')
@@ -18,15 +19,18 @@ def karera():
 
 @app.route('/obrazovanie')
 def obrazovanie():
-    return 'Hello World2'
+    webbrowser.open('2.html')
+    return htmltext
 
 @app.route('/kursi')
 def kursi():
-    return 'Hello World3'
+    webbrowser.open('3.html')
+    return htmltext
 
 @app.route('/dopolnitelno')
 def dopolnitelno():
-    return 'Hello World4'
+    webbrowser.open('4.html')
+    return htmltext
 
 htmltext = ''' <html>
 <head>
@@ -65,7 +69,8 @@ htmltext = ''' <html>
 </head>
 <body BGCOLOR="#FFFFCC", text = "#111111">
 <p>
-<ul>
+<ul align=center>
+    <li><a href="/"><font face="Helvetica">Главная</font></a></li>
     <li><a href="/karera"><font face="Helvetica">Карьера</font></a></li>
     <li><a href="/obrazovanie"><font face="Helvetica">Образование</font></a></li>
     <li><a href="/kursi"><font face="Helvetica">Курсы</font></a></li>
