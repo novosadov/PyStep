@@ -1,12 +1,39 @@
+
 from flask import Flask
 from flask import request
 from werkzeug import secure_filename
+from flask import render_template
+import webbrowser
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return htmltext
+
+@app.route('/karera')
+def karera():
+    webbrowser.open_new(
+    '1.html'
+)
+
+@app.route('/obrazovanie')
+def obrazovanie():
+    return 'Hello World2'
+
+@app.route('/kursi')
+def kursi():
+    return 'Hello World3'
+
+@app.route('/dopolnitelno')
+def dopolnitelno():
+    return 'Hello World4'
 
 htmltext = ''' <html>
 <head>
-
-<<meta charset="utf-8">
-  <title>Меню</title>
+<meta charset="utf-8">
+  <title>Портфолио</title>
   <style>
    li {
     display: inline-block; /* Строчно-блочные элементы */
@@ -34,24 +61,18 @@ htmltext = ''' <html>
    }
   </style>
   
-
-
 <b>
-<center><i><font size=7>Портфолио!</font></i></center>
+<center><i><font face="Arial" size=7>Портфолио!</font></i></center>
 </b>
 </head>
-
-
 <body BGCOLOR="#FFFFCC", text = "#111111">
 <p>
-
 <ul>
-    <li><a href="1.html">Карьера</a></li>
-    <li><a href="2.html">Образование</a></li>
-    <li><a href="3.html">Курсы</a></li>
-    <li><a href="4.html">Дополнительно</a></li>
+    <li><a href="/karera"><font face="Helvetica">Карьера</font></a></li>
+    <li><a href="/obrazovanie"><font face="Helvetica">Образование</font></a></li>
+    <li><a href="/kursi"><font face="Helvetica">Курсы</font></a></li>
+    <li><a href="/dopolnitelno"><font face="Helvetica">Дополнительно</font></a></li>
   </ul>
-
 <p>
 <table border=5 align=center text = "#ff0000">
 <tr>
@@ -67,23 +88,13 @@ htmltext = ''' <html>
 </table>
 </p>
 </p>
-
 </body>
 </html> '''
 
-app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return htmltext
+webbrowser.open_new(
+    'http://127.0.0.1:5000/')
 
-@app.route('/hello')
-def hello():
-    return 'Hello World'
-
-@app.route('/hello2')
-def hello2():
-    return 'Hello World2'
 
 
 if __name__ == '__main__':
